@@ -1,0 +1,86 @@
+<% include ./partials/header.ejs %>
+<div class="w-full h-screen bg-zinc-300 flex items-center justify-center">
+  <div class="w-[25vw] bg-white px-10 py-10 rounded-[25px] m-auto">
+    <img
+      src="https://i.pinimg.com/originals/d3/d1/75/d3d175e560ae133f1ed5cd4ec173751a.png"
+      alt="pin logo"
+      class="w-[60px] top-[20px] mx-auto"
+    />
+    <h1
+      class="text-3xl tracking-tighter text-center text-zinc-700 font-semibold capitalize"
+    >
+      Welcome to Pinterest
+    </h1>
+    <p class="text-center text-zinc-600 font-semibold capitalize">
+      Explore new Ideas to try
+    </p>
+    <form action="/register" method="post">
+      <input
+        class="border-2 rounded-lg block w-full mt-2 px-3 py-2"
+        type="text"
+        name="fullname"
+        placeholder="fullname"
+      />
+      <input
+        class="border-2 rounded-lg block w-full mt-2 px-3 py-2"
+        type="text"
+        name="username"
+        placeholder="username"
+      />
+      <input
+        class="border-2 rounded-lg block w-full mt-2 px-3 py-2"
+        type="tel"
+        name="contact"
+        placeholder="contact"
+      />
+      <input
+        class="border-2 rounded-lg block w-full mt-2 px-3 py-2"
+        type="email"
+        name="email"
+        placeholder="email"
+      />
+      <div class="relative mt-2">
+        <input
+          id="password"
+          class="border-2 rounded-lg block w-full px-3 py-2"
+          type="password"
+          name="password"
+          placeholder="password"
+        />
+        <span
+          id="togglePassword"
+          class="absolute inset-y-0 right-3 flex items-center cursor-pointer"
+        >
+          <img
+            src="../images/eyeview.png"
+            alt="Show Password"
+            id="eyeView"
+            style="display: none"
+          />
+          <img src="../images/eyecut.png" alt="Hide Password" id="eyeCut" />
+        </span>
+      </div>
+      <input
+        class="border-2 rounded-lg block w-full mt-2 px-3 py-2 bg-red-600 cursor-pointer text-white rounded-full"
+        type="submit"
+        value="Continue"
+      />
+      <p class="text-[13px] mt-2 text-start text-zinc-500">
+        By continuing, you agree to Pinterest's
+        <span class="font-semibold text-zinc-700">Terms of Service</span> and
+        acknowledge you've read our
+        <span class="font-semibold text-zinc-700"
+          >Privacy Policy. Notice at collection.</span
+        >
+      </p>
+      <p class="text-[13px] mt-2 text-start text-zinc-500">
+        <a href="/" class="font-extrabold text-zinc-700"
+          >Already a Member? Log in</a
+        >
+        Are you a business?
+        <span class="font-semibold text-zinc-700">Get started here!</span>
+      </p>
+    </form>
+  </div>
+</div>
+<% include ./partials/footer.ejs %>

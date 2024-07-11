@@ -1,0 +1,61 @@
+<% include ./partials/header.ejs %>
+<div class="w-full h-screen bg-zinc-300 flex items-center justify-center">
+  <div class="w-[25vw] bg-white px-10 py-10 rounded-[25px] m-auto">
+    <img
+      src="https://i.pinimg.com/originals/d3/d1/75/d3d175e560ae133f1ed5cd4ec173751a.png"
+      alt="pin logo"
+      class="w-[70px] top-[20px] mx-auto"
+    />
+    <h1
+      class="text-3xl tracking-tighter text-center text-zinc-700 font-semibold capitalize"
+    >
+      Welcome to Pinterest
+    </h1>
+    <form action="/login" method="post">
+      <input
+        class="border-2 rounded-lg block w-full mt-2 px-3 py-2"
+        type="text"
+        name="username"
+        placeholder="username"
+      />
+      <div class="relative mt-2">
+        <input
+          id="password"
+          class="border-2 rounded-lg block w-full px-3 py-2"
+          type="password"
+          name="password"
+          placeholder="password"
+        />
+        <span
+          id="togglePassword"
+          class="absolute inset-y-0 right-3 flex items-center cursor-pointer"
+        >
+          <img src="../images/eyeview.png" alt="Show Password" id="eyeView" style="display: none;">
+          <img src="../images/eyecut.png" alt="Hide Password" id="eyeCut">
+        </span>
+      </div>
+      <a href="#" class="text-zinc-500 font-semibold mt-2">Forgot Password ?</a>
+      <input
+        class="border-2 rounded-lg block w-full mt-2 px-3 py-2 bg-red-600 text-white rounded-full cursor-pointer"
+        type="submit"
+        value="Login"
+      />
+      <p class="text-[13px] mt-2 text-start text-zinc-500">
+        By continuing, you agree to Pinterest's
+        <span class="font-semibold text-zinc-700">Terms of Service</span> and
+        acknowledge you've read our
+        <span class="font-semibold text-zinc-700"
+          >Privacy Policy. Notice at collection.</span
+        >
+      </p>
+      <p class="text-[13px] mt-2 text-start text-zinc-500">
+        <a href="/register" class="font-extrabold text-zinc-700"
+          >Not on Pinterest yet? Sign up</a
+        >
+        Are you a business?
+        <span class="font-semibold text-zinc-700">Get started here!</span>
+      </p>
+    </form>
+  </div>
+</div>
+<% include ./partials/footer.ejs %>
