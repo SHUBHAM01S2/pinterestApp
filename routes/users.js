@@ -1,13 +1,21 @@
 const mongoose = require("mongoose");
 const plm = require("passport-local-mongoose");
-mongoose.connect("mongodb://localhost:27017/Pinterest_Project");
+require("dotenv").config(); // Load environment variables from .env file
 
-const userSchema = mongoose.Schema({
+mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => {
+    console.log("Connected to MongoDB");
+  })
+  .catch((err) => {
+    console.error("Failed to connect to MongoDB", err);
+  });
+
+const userSchema = new mongoose.Schema({
   fullname: String,
   username: String,
   name: String,
   email: String,
-  password: String,
+  password: String, // Consider removing this if using passport-local-mongoose for authentication
   profileImage: String,
   contact: Number,
   boards: {
@@ -21,6 +29,7 @@ const userSchema = mongoose.Schema({
     },
   ],
 });
+
 userSchema.plugin(plm);
 
 module.exports = mongoose.model("user", userSchema);
